@@ -1,0 +1,31 @@
+server:
+  port: 4000
+  error:
+    include-exception: true # ?? ??? exception? ??? ???? ??
+    include-stacktrace: always # ?? ??? stacktrace ??? ??? ? ??
+
+
+    ##ddl-auto? generate-ddl? ??
+#ddl ? ? none, false
+#ddl ? ? update, true
+spring:
+  datasource:
+    connectionProperties: useUnicode=true;characterEncoding=utf-8;
+    url: jdbc:mysql://localhost:3306/entertainment?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: rudtjrWkd1!!
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    generate-ddl: true
+
+logging:
+  level:
+    root: info
